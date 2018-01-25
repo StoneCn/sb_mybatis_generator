@@ -1,5 +1,7 @@
 package com.stone.sb_mybatis_test2;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.stone.mapper.DeptMapper;
 import com.stone.mapper.UserMapper;
 import com.stone.model.Dept;
@@ -31,7 +33,10 @@ public class SbMybatisTest2ApplicationTests {
 
 	@Test
 	public void test(){
+		//1、设置分页信息，包括当前页数和每页显示的总计数
+		PageHelper.startPage(1, 5);
 		List<Dept> depts = deptMapper.selectAll();
-		System.out.println(depts);
+		PageInfo<Dept> deptPageInfo = new PageInfo<>(depts);
+		System.out.println("deptPageInfo: "+deptPageInfo);
 	}
 }
