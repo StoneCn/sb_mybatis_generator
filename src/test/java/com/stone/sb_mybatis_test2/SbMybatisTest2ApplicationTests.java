@@ -1,6 +1,8 @@
 package com.stone.sb_mybatis_test2;
 
+import com.stone.mapper.DeptMapper;
 import com.stone.mapper.UserMapper;
+import com.stone.model.Dept;
 import com.stone.model.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,6 +19,9 @@ public class SbMybatisTest2ApplicationTests {
 
 	@Autowired
 	UserMapper userMapper;
+
+	@Autowired
+	DeptMapper deptMapper;
 	@Test
 	public void contextLoads() {
 
@@ -24,4 +29,9 @@ public class SbMybatisTest2ApplicationTests {
 		System.out.println(users);
 	}
 
+	@Test
+	public void test(){
+		List<Dept> depts = deptMapper.selectAll();
+		System.out.println(depts);
+	}
 }
