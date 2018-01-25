@@ -1,0 +1,2 @@
+# sb_mybatis_generator
+springboot集成mybatis使用的是官方推荐的方式,加上mybatis-generator代码生成器
